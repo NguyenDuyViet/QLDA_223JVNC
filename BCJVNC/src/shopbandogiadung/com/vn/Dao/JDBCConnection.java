@@ -19,6 +19,7 @@ public class JDBCConnection {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             
+           
             conn =  DriverManager.getConnection(url);
 
             System.out.println("Connection to database successful!!!");
