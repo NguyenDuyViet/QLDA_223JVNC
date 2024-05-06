@@ -7,7 +7,7 @@ import java.sql.*;
  */
 public class JDBCConnection {
     static final String passWord = "08052004";
-    static final String dataBaseName = "";
+    static final String dataBaseName = "QLSHOPDOGIADUNG";
     static final String user = "sa";
     
     public static Connection getJDBCConnection(){
