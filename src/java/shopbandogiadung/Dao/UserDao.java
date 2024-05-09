@@ -7,6 +7,7 @@ package shopbandogiadung.Dao;
 import java.util.ArrayList;
 import shopbandogiadung.model.User;
 import java.sql.*;
+import shopbandogiadung.model.TKUser;
 
 /**
  *
@@ -68,8 +69,8 @@ public class UserDao {
         }
     }
     
-    public ArrayList<Object> getAllTKUser(){
-        ArrayList<Object> tkUsers = new ArrayList<Object>();
+    public ArrayList<TKUser> getAllTKUser(){
+        ArrayList<TKUser> tkUsers = new ArrayList<TKUser>();
         
         Connection connection = JDBCConnection.getJDBCConnection();
         String sql = "SELECT * FROM Users";
@@ -79,12 +80,13 @@ public class UserDao {
             ResultSet rs = preparedStatement.executeQuery();
             
             while (rs.next()) {
-                User user = new User();
-                user.setSDT(rs.getString("SDT"));
-                user.setEmail(rs.getString("Email"));
-                user.setMatKhau(rs.getString("MatKhau"));
+                TKUser tkuser = new TKUser();
                 
-                tkUsers.add(user);
+                tkuser.setSdt(rs.getString("SDT"));
+                tkuser.setEmail(rs.getString("Email"));
+                tkuser.setPassword(rs.getString("MatKhau"));
+                
+                tkUsers.add(tkuser);
             }
             
             // Đóng ResultSet và PreparedStatement

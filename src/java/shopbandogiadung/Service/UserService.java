@@ -6,6 +6,7 @@ package shopbandogiadung.Service;
 
 import java.util.ArrayList;
 import shopbandogiadung.Dao.UserDao;
+import shopbandogiadung.model.TKUser;
 import shopbandogiadung.model.User;
 
 /**
@@ -27,7 +28,7 @@ public class UserService {
         userDao.addUser(user);
     }
     
-    public ArrayList<Object> getAllTKUser(){
+    public ArrayList<TKUser> getAllTKUser(){
         return userDao.getAllTKUser();
     }
 }
