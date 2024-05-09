@@ -4,7 +4,7 @@ use QLSHOPDOGIADUNG
 go
 create table Users
 (
-	MaKH char(5) primary key,
+	MaKH int identity(1,1) primary key,
 	Ho nvarchar(10),
 	Ten nvarchar(30),
 	SDT char(10) unique,
@@ -37,7 +37,7 @@ create table HoaDonDatHang
 	NgayGiaoHang date,
 	SoLuong integer ,
 	GiaMua bigint ,
-	MaKH char(5) foreign key references Users(MaKH),
+	MaKH int foreign key references Users(MaKH),
 	MaSanPham char(5) foreign key references SanPham(MaSanPham)
 	ON DELETE CASCADE  ON UPDATE CASCADE
 )
@@ -45,7 +45,7 @@ create table HoaDonDatHang
 create table GioHang
 (
 	MaGioHang char(5) primary key,
-	MaKH char(5) foreign key references Users(MaKH),
+	MaKH int foreign key references Users(MaKH),
 	MaSanPham char(5) foreign key references SanPham(MaSanPham)
 	ON DELETE CASCADE  ON UPDATE CASCADE
 )
@@ -78,8 +78,10 @@ insert into SanPham(MaSanPham,TenSanPham,GiaBan,SoLuong,MaLoai) values	('B0001',
 																		('TL001',N'Tủ lạnh',1000000,30,'TL'),
 																		('HB001',N'Máy hút bụi',200000,70,'HB'),
 																		('HB002',N'Robot hút bụi',500000,70,'HB')
-insert into Users(MaKH,Ho,Ten,SDT,Email,DiaChi,MatKhau) 
-values	('K0001',N'Nguyễn',N'Văn A','0123456789','nva@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvana'),
-		('K0002',N'Nguyễn',N'Văn B','0123456788','nvb@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvanb'),
-		('K0003',N'Nguyễn',N'Văn C','0123456787','nvc@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvanc'),
-		('K0004',N'Nguyễn',N'Văn D','0123456786','nvd@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvand')
+insert into Users(Ho,Ten,SDT,Email,DiaChi,MatKhau) 
+values	(N'Nguyễn',N'Văn A','0123456789','nva@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvana'),
+		(N'Nguyễn',N'Văn B','0123456788','nvb@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvanb'),
+		(N'Nguyễn',N'Văn C','0123456787','nvc@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvanc'),
+		(N'Nguyễn',N'Văn D','0123456786','nvd@gmail.com',N'48 Cao Thắng, Hải Châu, Đà Nẵng','nguyenvand')
+
+drop database QLSHOPDOGIADUNG
