@@ -31,7 +31,7 @@ public class P_SanPham {
     }
     public int XoaSP(String MaSP)
     {
-        sqlDeleteSP = "Delete from SanPham WHERE MaSP = '"+MaSP+"'";
+        sqlDeleteSP = "Delete from SanPham WHERE MaSanPham = '"+MaSP+"'";
         int k = con.ExecuteUpdateSQL(sqlDeleteSP);
         return k;
     }

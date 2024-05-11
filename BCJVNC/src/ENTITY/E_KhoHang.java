@@ -35,6 +35,11 @@ public class E_KhoHang {
     public void setTenLoai(String TenLoai) {
         this.TenLoai = TenLoai;
     }
+
+    @Override
+    public String toString() {
+        return MaLoai;
+    }
     
     
 

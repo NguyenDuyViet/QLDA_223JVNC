@@ -18,9 +18,9 @@ public class P_Users {
     String sqlInsertUS;
     String sqlDeleteUS;
     String sqlUpdateUS;
-    
-    
-    
+
+
+
       public int ThemUS(String Ho,String Ten, String SDT, String Email, String Dchi, String Matkhau)
     {
      sqlInsertUS="insert into Users(Ho,Ten,SDT,Email,DiaChi,MatKhau)" 
