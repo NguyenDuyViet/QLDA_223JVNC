@@ -8,7 +8,7 @@ package ENTITY;
  *
  * @author ZEQ
  */
-public class E_User {
+public class E_Users {
         private int     MaKH;
         private String	Ho;
         private String	Ten;
@@ -17,10 +17,10 @@ public class E_User {
         private String	DiaChi;
         private String	MatKhau ;
 
-    public E_User() {
+    public E_Users() {
     }
 
-    public E_User(int MaKH, String Ho, String Ten, String SDT, String Email, String DiaChi, String MatKhau) {
+    public E_Users(int MaKH, String Ho, String Ten, String SDT, String Email, String DiaChi, String MatKhau) {
         this.MaKH = MaKH;
         this.Ho = Ho;
         this.Ten = Ten;
