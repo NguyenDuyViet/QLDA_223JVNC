@@ -17,23 +17,31 @@ import shopbandogiadung.model.User;
  *
  * @author ADMIN
  */
-@WebServlet(urlPatterns = {"/Login"})
-public class LoginServlet extends HttpServlet{
+@WebServlet(urlPatterns = {"/Singup"})
+public class SingupServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username =  String.valueOf(req.getParameter("username"));
-        String password = req.getParameter("password");
+        String Ho = req.getParameter("ho");
+        String Ten = req.getParameter("ten");
+        String SDT = req.getParameter("sdt");
+        String email = req.getParameter("email");
+        String diachi = req.getParameter("diachi");
+        String matkhau = req.getParameter("matkhau");
         
+        User user = new User();
         UserService userService = new UserService();
-        User user = userService.findUser(username, password);
-        if (user != null) {
-            // Tạo cookie khi đăng nhập thành công
-            req.getSession().setAttribute("userLoggedIn", user);
-        }
         
-        // Chuyển hướng người dùng sau khi đăng nhập (ví dụ: về trang chủ)
-        resp.sendRedirect("Home.jsp");
+        user.setHo(Ho);
+        user.setTen(Ten);
+        user.setSDT(SDT);
+        user.setEmail(email);
+        user.setDiaChi(diachi);
+        user.setMatKhau(matkhau);
+        
+        userService.addUser(user);
+        
+        resp.sendRedirect("index.jsp");
     }
     
 }

@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%-- 
+    Document   : shop-detail
+    Created on : May 11, 2024, 9:19:00 PM
+    Author     : ADMIN
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
         <title>Shop Real</title>
@@ -11,24 +17,25 @@
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+            rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="<%= request.getContextPath() %>/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="<%= request.getContextPath() %>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+        <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet">
 
+    </head>
     <body>
 
         <!-- Spinner Start -->
@@ -55,24 +62,24 @@
             </div>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Shop Real</h1></a>
+                    <a href="index.jsp" class="navbar-brand"><h1 class="text-primary display-6">Shop Real</h1></a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="index.jsp" class="nav-item nav-link">Trang chủ</a>
-                            <a href="shop.html" class="nav-item nav-link">Cửa hàng</a>
-                            <a href="shop-detail.html" class="nav-item nav-link active">Chi tiết</a>
+                            <a href="shop.jsp" class="nav-item nav-link">Cửa hàng</a>
+                            <a href="shop-detail.jsp" class="nav-item nav-link active">Chi tiết</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trang</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item">Giỏ hàng</a>
-                                    <a href="chackout.html" class="dropdown-item">Thủ tục thanh toán</a>
-                                    <a href="testimonial.html" class="dropdown-item">Cam kết</a>
+                                    <a href="cart.jsp" class="dropdown-item">Giỏ hàng</a>
+                                    <a href="chackout.jsp" class="dropdown-item">Thủ tục thanh toán</a>
+                                    <a href="testimonial.jsp" class="dropdown-item">Cam kết</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                            <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
                         </div>
                         <div class="d-flex m-3 me-0">
                             <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
@@ -710,5 +717,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </body>
-
 </html>

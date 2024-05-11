@@ -31,4 +31,7 @@ public class UserService {
     public ArrayList<TKUser> getAllTKUser(){
         return userDao.getAllTKUser();
     }
+    public User findUser(String username, String password){
+        return userDao.findUser(username, password);
+    }
 }

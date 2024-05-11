@@ -9,21 +9,12 @@ package shopbandogiadung.model;
  * @author ADMIN
  */
 public class User {
-    private String MaKH;
     private String Ho;
     private String Ten;
     private String SDT;
     private String Email;
     private String DiaChi;
     private String MatKhau;
-
-    public String getMaKH() {
-        return MaKH;
-    }
-
-    public void setMaKH(String MaKH) {
-        this.MaKH = MaKH;
-    }
 
     public String getHo() {
         return Ho;

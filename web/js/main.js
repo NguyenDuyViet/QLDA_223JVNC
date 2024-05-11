@@ -146,38 +146,38 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
-    window.onload = function() {
-        checkLoginStatus();
-    };
-
-    function checkLoginStatus() {
-        var userLoggedIn = getCookie("userLoggedIn");
-        if (userLoggedIn === "true") {
-            // Đã đăng nhập
-            document.getElementById("userIcon").style.display = "inline"; // Hiển thị icon user
-            document.getElementById("plusIcon").style.display = "none"; // Ẩn icon dấu cộng
-        } else {
-            // Chưa đăng nhập
-            document.getElementById("userIcon").style.display = "none"; // Ẩn icon user
-            document.getElementById("plusIcon").style.display = "inline"; // Hiển thị icon dấu cộng
-        }
-    }
-
-    // Hàm để lấy giá trị của cookie
-    function getCookie(cookieName) {
-        var name = cookieName + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var cookieArray = decodedCookie.split(';');
-        for (var i = 0; i < cookieArray.length; i++) {
-            var cookie = cookieArray[i];
-            while (cookie.charAt(0) == ' ') {
-                cookie = cookie.substring(1);
-            }
-            if (cookie.indexOf(name) == 0) {
-                return cookie.substring(name.length, cookie.length);
-            }
-        }
-        return "";
-    }
+//    window.onload = function() {
+//        checkLoginStatus();
+//    };
+//
+//    function checkLoginStatus() {
+//        var userLoggedIn = getCookie("userLoggedIn");
+//        if (userLoggedIn === "true") {
+//            // Đã đăng nhập
+//            document.getElementById("userIcon").style.display = "inline"; // Hiển thị icon user
+//            document.getElementById("plusIcon").style.display = "none"; // Ẩn icon dấu cộng
+//        } else {
+//            // Chưa đăng nhập
+//            document.getElementById("userIcon").style.display = "none"; // Ẩn icon user
+//            document.getElementById("plusIcon").style.display = "inline"; // Hiển thị icon dấu cộng
+//        }
+//    }
+//
+//    // Hàm để lấy giá trị của cookie
+//    function getCookie(cookieName) {
+//        var name = cookieName + "=";
+//        var decodedCookie = decodeURIComponent(document.cookie);
+//        var cookieArray = decodedCookie.split(';');
+//        for (var i = 0; i < cookieArray.length; i++) {
+//            var cookie = cookieArray[i];
+//            while (cookie.charAt(0) == ' ') {
+//                cookie = cookie.substring(1);
+//            }
+//            if (cookie.indexOf(name) == 0) {
+//                return cookie.substring(name.length, cookie.length);
+//            }
+//        }
+//        return "";
+//    }
 })(jQuery);
 

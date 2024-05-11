@@ -26,7 +26,6 @@ public class UserDao {
             
             while (rs.next()) {
                 User user = new User();
-                user.setMaKH(rs.getString("MaKH"));
                 user.setHo(rs.getString("Ho"));
                 user.setTen(rs.getString("Ten"));
                 user.setSDT(rs.getString("SDT"));
@@ -50,17 +49,16 @@ public class UserDao {
     public void addUser(User user){
         Connection connection = JDBCConnection.getJDBCConnection();
         
-        String sql = "INSERT INTO Users(MaKH, Ho, Ten, SDT, Email, DiaChi, MatKhau) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Users(Ho, Ten, SDT, Email, DiaChi, MatKhau) VALUES (?,?,?,?,?,?)";
         
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getMaKH());
-            preparedStatement.setString(2, user.getHo());
-            preparedStatement.setString(3, user.getTen());
-            preparedStatement.setString(4, user.getSDT());
-            preparedStatement.setString(5, user.getEmail());
-            preparedStatement.setString(6, user.getDiaChi());
-            preparedStatement.setString(7, user.getMatKhau());
+            preparedStatement.setString(1, user.getHo());
+            preparedStatement.setString(2, user.getTen());
+            preparedStatement.setString(3, user.getSDT());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setString(5, user.getDiaChi());
+            preparedStatement.setString(6, user.getMatKhau());
             
             int rs = preparedStatement.executeUpdate();
             System.out.println(rs);
@@ -97,5 +95,31 @@ public class UserDao {
         }
         
         return tkUsers;
+    }
+    public User findUser(String username, String password){
+        Connection connection = JDBCConnection.getJDBCConnection();
+        String sql = "SELECT * FROM Users Where (SDT = "+username+" or Email = "+ username + ")and MatKhau="+password;
+        
+        User user = new User();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            
+            while (rs.next()) {
+                user.setHo(rs.getString("Ho"));
+                user.setTen(rs.getString("Ten"));
+                user.setSDT(rs.getString("SDT"));
+                user.setEmail(rs.getString("Email"));
+                user.setDiaChi(rs.getString("DiaChi"));
+                user.setMatKhau(rs.getString("MatKhau"));
+            }
+            
+            // Đóng ResultSet và PreparedStatement
+            rs.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 }
