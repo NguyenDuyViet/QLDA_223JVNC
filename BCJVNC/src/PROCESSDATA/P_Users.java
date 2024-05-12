@@ -49,7 +49,7 @@ public class P_Users {
         public Vector<ENTITY.E_Users> DanhSachKhachHang(){
         Vector<ENTITY.E_Users> vt=new Vector<ENTITY.E_Users>();
      try{
-           sqlSelectUS="select * from KhoHang";
+           sqlSelectUS="select * from Users";
         ResultSet rs = con.getResultSet(sqlSelectUS);
             while (rs.next()) {
                 ENTITY.E_Users us=new ENTITY.E_Users();
