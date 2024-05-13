@@ -57,7 +57,7 @@
 
                 <div class="media-options">
                     <a href="#" class="field google">
-                        <img src="images/google.png" alt="" class="google-img">
+                        <img src="images/gg.png" alt="" class="google-img">
                         <span>Đăng nhập với Google</span>
                     </a>
                 </div>
@@ -65,7 +65,12 @@
             </div>
 
             <!-- Signup Form -->
-
+            <c:if test="${sessionScope.exist== 'false'}">
+                <script>
+                var message = "Tài khoảng đã tồn tại, vui lòng đăng nhập hoặc đăng ký tài khoảng khác!";
+                alert(message);
+                </script>
+            </c:if>
             <div class="form2 signup">
                 <div class="form-content">
                     <header>Đăng ký</header>
@@ -122,7 +127,7 @@
 
                 <div class="media-options">
                     <a href="#" class="field google">
-                        <img src="images/google.png" alt="" class="google-img">
+                        <img src="images/gg.png" alt="" class="google-img">
                         <span>Đăng nhập với Google</span>
                     </a>
                 </div>

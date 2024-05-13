@@ -5,8 +5,10 @@
 package shopbandogiadung.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import shopbandogiadung.Dao.SanPhamDao;
 import shopbandogiadung.model.SanPham;
+import shopbandogiadung.model.SanPhamDTO;
 
 /**
  *
@@ -14,12 +16,29 @@ import shopbandogiadung.model.SanPham;
  */
 public class SanPhamService {
     private SanPhamDao sanphamdao;
+    
+    public static List<SanPhamDTO> carts = new ArrayList<>();
 
+    public SanPhamDao getSanphamdao() {
+        return sanphamdao;
+    }
+
+    public void setSanphamdao(SanPhamDao sanphamdao) {
+        this.sanphamdao = sanphamdao;
+    }
+
+    
+    
+    
     public SanPhamService() {
         sanphamdao = new SanPhamDao();
     }
     
     public ArrayList<SanPham> getAllProduce(){
         return sanphamdao.getAllProduce();
+    }
+    
+    public SanPhamDTO getSanPhambyMaSP(String maSP){
+        return sanphamdao.getSanPhambyMaSP(maSP);
     }
 }

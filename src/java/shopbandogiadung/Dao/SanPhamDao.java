@@ -7,6 +7,7 @@ package shopbandogiadung.Dao;
 import java.util.ArrayList;
 import shopbandogiadung.model.SanPham;
 import java.sql.*;
+import shopbandogiadung.model.SanPhamDTO;
 
 /**
  *
@@ -30,6 +31,7 @@ public class SanPhamDao {
                 produce.setGiaBan(rs.getDouble("GiaBan"));
                 produce.setSoLuong(rs.getInt("SoLuong"));
                 produce.setMaLoai(rs.getString("MaLoai"));
+                produce.setImageProduct(rs.getString("ImageProduct"));
                 
                 Produces.add(produce);
             }
@@ -42,5 +44,37 @@ public class SanPhamDao {
         }
         
         return Produces;
+    }
+    
+
+    public SanPhamDTO getSanPhambyMaSP(String maSP) {
+        Connection connection = JDBCConnection.getJDBCConnection();
+        String sql = "SELECT * FROM SanPham WHERE MaSanPham = ?";
+        
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, maSP);
+            ResultSet rs = preparedStatement.executeQuery();
+            
+            while (rs.next()) {
+                SanPhamDTO produce = new SanPhamDTO();
+                produce.setMaSanPham(rs.getString("MaSanPham"));
+                produce.setTenSanPham(rs.getString("TenSanPham"));
+                produce.setGiaBan(rs.getDouble("GiaBan"));
+                produce.setSoLuong(rs.getInt("SoLuong"));
+                produce.setMaLoai(rs.getString("MaLoai"));
+                produce.setImageProduct(rs.getString("ImageProduct"));
+                produce.setSoLuongCart(1);
+                return produce;
+            }
+            
+            // Đóng ResultSet và PreparedStatement
+            rs.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return null;
     }
 }

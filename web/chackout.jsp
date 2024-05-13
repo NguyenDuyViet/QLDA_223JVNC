@@ -4,62 +4,8 @@
     Author     : ADMIN
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Shop Real</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
-            rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="<%= request.getContextPath() %>/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="<%= request.getContextPath() %>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet">
-
-    </head>
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Navbar start -->
-        <div class="container-fluid fixed-top">
-            <div class="container topbar bg-primary d-none d-lg-block">
-                <div class="d-flex justify-content-between">
-                    <div class="top-info ps-2">
-                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">48 Cao Thắng, Hải Châu, TP Đà Nẵng</a></small>
-                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">abc123456@gmail.com</a></small>
-                    </div>
-                    <div class="top-link pe-2">
-                        <a href="#" class="text-white"><small class="text-white mx-2">Chính sách bảo mật</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white mx-2">Điều khoảng sử dụng</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white ms-2">Bán hàng và hoàn tiền</small></a>
-                    </div>
-                </div>
-            </div>
+<%@include file="/includes/header.jsp" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
                     <a href="index.jsp" class="navbar-brand"><h1 class="text-primary display-6">Shop Real</h1></a>
@@ -81,22 +27,7 @@
                             </div>
                             <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
-                            <a href="login_register_form.html" class="my-auto">
-                                <i class="fas fa-plus fa-2x"></i>
-                                <i class="fas fa-user fa-2x" style="display: none"></i>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Navbar End -->
+                        <%@include file="/includes/Icon.jsp" %>
 
 
         <!-- Modal Search Start -->
@@ -134,60 +65,53 @@
         <!-- Checkout Page Start -->
         <div class="container-fluid py-5">
             <div class="container py-5">
-                <h1 class="mb-4">Billing details</h1>
+                <h1 class="mb-4">Chi tiết thanh toán</h1>
                 <form action="#">
                     <div class="row g-5">
                         <div class="col-md-12 col-lg-6 col-xl-7">
                             <div class="row">
                                 <div class="col-md-12 col-lg-6">
                                     <div class="form-item w-100">
-                                        <label class="form-label my-3">First Name<sup>*</sup></label>
+                                        <label class="form-label my-3"> Tên <sup>*</sup></label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-lg-6">
                                     <div class="form-item w-100">
-                                        <label class="form-label my-3">Last Name<sup>*</sup></label>
+                                        <label class="form-label my-3">Họ<sup>*</sup></label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-item">
-                                <label class="form-label my-3">Company Name<sup>*</sup></label>
+                                <label class="form-label my-3">Tên công ty<sup>*</sup></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-item">
-                                <label class="form-label my-3">Address <sup>*</sup></label>
+                                <label class="form-label my-3">Địa chỉ<sup>*</sup></label>
                                 <input type="text" class="form-control" placeholder="House Number Street Name">
                             </div>
                             <div class="form-item">
-                                <label class="form-label my-3">Town/City<sup>*</sup></label>
+                                <label class="form-label my-3">Thành Phố<sup>*</sup></label>
                                 <input type="text" class="form-control">
                             </div>
+
                             <div class="form-item">
-                                <label class="form-label my-3">Country<sup>*</sup></label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-item">
-                                <label class="form-label my-3">Postcode/Zip<sup>*</sup></label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-item">
-                                <label class="form-label my-3">Mobile<sup>*</sup></label>
+                                <label class="form-label my-3">Điện thoại<sup>*</sup></label>
                                 <input type="tel" class="form-control">
                             </div>
                             <div class="form-item">
-                                <label class="form-label my-3">Email Address<sup>*</sup></label>
+                                <label class="form-label my-3">Email<sup>*</sup></label>
                                 <input type="email" class="form-control">
                             </div>
                             <div class="form-check my-3">
                                 <input type="checkbox" class="form-check-input" id="Account-1" name="Accounts" value="Accounts">
-                                <label class="form-check-label" for="Account-1">Create an account?</label>
+                                <label class="form-check-label" for="Account-1">Tạo tài khoản mới?</label>
                             </div>
                             <hr>
                             <div class="form-check my-3">
                                 <input class="form-check-input" type="checkbox" id="Address-1" name="Address" value="Address">
-                                <label class="form-check-label" for="Address-1">Ship to a different address?</label>
+                                <label class="form-check-label" for="Address-1">Gửi đến địa chỉ khác?</label>
                             </div>
                             <div class="form-item">
                                 <textarea name="text" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Oreder Notes (Optional)"></textarea>
@@ -198,46 +122,46 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Products</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Total</th>
+                                            <th scope="col">Sản Phẩm</th>
+                                            <th scope="col">Tên </th>
+                                            <th scope="col">Giá</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Toàn thể</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th scope="row">
                                                 <div class="d-flex align-items-center mt-2">
-                                                    <img src="img/vegetable-item-2.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                    <img src="images/maygiatLG14kgden.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                                 </div>
                                             </th>
-                                            <td class="py-5">Awesome Brocoli</td>
-                                            <td class="py-5">$69.00</td>
-                                            <td class="py-5">2</td>
-                                            <td class="py-5">$138.00</td>
+                                            <td class="py-5">Máy giặt LG</td>
+                                            <td class="py-5">10.500.000 đồng</td>
+                                            <td class="py-5">1</td>
+                                            <td class="py-5">10.500.000 đồng</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">
                                                 <div class="d-flex align-items-center mt-2">
-                                                    <img src="img/vegetable-item-5.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                    <img src="images/bepgasDanang.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                                 </div>
                                             </th>
-                                            <td class="py-5">Potatoes</td>
-                                            <td class="py-5">$69.00</td>
+                                            <td class="py-5">Bếp gas</td>
+                                            <td class="py-5">700.000 đồng</td>
                                             <td class="py-5">2</td>
-                                            <td class="py-5">$138.00</td>
+                                            <td class="py-5">1.400.000 đồng</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">
                                                 <div class="d-flex align-items-center mt-2">
-                                                    <img src="img/vegetable-item-3.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                    <img src="images/noi-com-dien-tu-long-nieu-nagakawa-nag0135-1-8l-900w-1.webp" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                                 </div>
                                             </th>
-                                            <td class="py-5">Big Banana</td>
-                                            <td class="py-5">$69.00</td>
-                                            <td class="py-5">2</td>
-                                            <td class="py-5">$138.00</td>
+                                            <td class="py-5">Nồi cơm điện</td>
+                                            <td class="py-5">550.000 đồng</td>
+                                            <td class="py-5">1</td>
+                                            <td class="py-5">550.000 đồng</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">
@@ -245,11 +169,11 @@
                                             <td class="py-5"></td>
                                             <td class="py-5"></td>
                                             <td class="py-5">
-                                                <p class="mb-0 text-dark py-3">Subtotal</p>
+                                                <p class="mb-0 text-dark py-3">Tổng phụ</p>
                                             </td>
                                             <td class="py-5">
                                                 <div class="py-3 border-bottom border-top">
-                                                    <p class="mb-0 text-dark">$414.00</p>
+                                                    <p class="mb-0 text-dark">50.000 đồng</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -262,15 +186,15 @@
                                             <td colspan="3" class="py-5">
                                                 <div class="form-check text-start">
                                                     <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1" name="Shipping-1" value="Shipping">
-                                                    <label class="form-check-label" for="Shipping-1">Free Shipping</label>
+                                                    <label class="form-check-label" for="Shipping-1">Giao hàng miễn phí</label>
                                                 </div>
                                                 <div class="form-check text-start">
                                                     <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-2" name="Shipping-1" value="Shipping">
-                                                    <label class="form-check-label" for="Shipping-2">Flat rate: $15.00</label>
+                                                    <label class="form-check-label" for="Shipping-2"> Giá cố định: 20.000</label>
                                                 </div>
                                                 <div class="form-check text-start">
                                                     <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-3" name="Shipping-1" value="Shipping">
-                                                    <label class="form-check-label" for="Shipping-3">Local Pickup: $8.00</label>
+                                                    <label class="form-check-label" for="Shipping-3">Giá địa phương: 10.000</label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -278,13 +202,13 @@
                                             <th scope="row">
                                             </th>
                                             <td class="py-5">
-                                                <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
+                                                <p class="mb-0 text-dark text-uppercase py-3">Toàn thể </p>
                                             </td>
                                             <td class="py-5"></td>
                                             <td class="py-5"></td>
                                             <td class="py-5">
                                                 <div class="py-3 border-bottom border-top">
-                                                    <p class="mb-0 text-dark">$135.00</p>
+                                                    <p class="mb-0 text-dark">2.454.000 đồng</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -295,16 +219,16 @@
                                 <div class="col-12">
                                     <div class="form-check text-start my-3">
                                         <input type="checkbox" class="form-check-input bg-primary border-0" id="Transfer-1" name="Transfer" value="Transfer">
-                                        <label class="form-check-label" for="Transfer-1">Direct Bank Transfer</label>
+                                        <label class="form-check-label" for="Transfer-1">Chuyển khoản trực tiếp</label>
                                     </div>
-                                    <p class="text-start text-dark">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                                    <p class="text-start text-dark">Thực hiện thanh toán trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn hàng của bạn làm tài liệu tham khảo thanh toán. Đơn đặt hàng của bạn sẽ không được vận chuyển cho đến khi tiền đã được xóa trong tài khoản của chúng tôi</p>
                                 </div>
                             </div>
                             <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
                                 <div class="col-12">
                                     <div class="form-check text-start my-3">
                                         <input type="checkbox" class="form-check-input bg-primary border-0" id="Payments-1" name="Payments" value="Payments">
-                                        <label class="form-check-label" for="Payments-1">Check Payments</label>
+                                        <label class="form-check-label" for="Payments-1">Kiểm tra thanh toán</label>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +236,7 @@
                                 <div class="col-12">
                                     <div class="form-check text-start my-3">
                                         <input type="checkbox" class="form-check-input bg-primary border-0" id="Delivery-1" name="Delivery" value="Delivery">
-                                        <label class="form-check-label" for="Delivery-1">Cash On Delivery</label>
+                                        <label class="form-check-label" for="Delivery-1">Thanh toán khi giao hàng</label>
                                     </div>
                                 </div>
                             </div>
@@ -320,12 +244,12 @@
                                 <div class="col-12">
                                     <div class="form-check text-start my-3">
                                         <input type="checkbox" class="form-check-input bg-primary border-0" id="Paypal-1" name="Paypal" value="Paypal">
-                                        <label class="form-check-label" for="Paypal-1">Paypal</label>
+                                        <label class="form-check-label" for="Paypal-1">Thanh toán</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                                <button type="button" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place Order</button>
+                                <button type="button" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Đặt hàng</button>
                             </div>
                         </div>
                     </div>
@@ -335,105 +259,4 @@
         <!-- Checkout Page End -->
 
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
-            <div class="container py-5">
-                <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
-                    <div class="row g-4">
-                        <div class="col-lg-3">
-                            <a href="#">
-                                <h1 class="text-primary mb-0">Shop Real</h1>
-                                <p class="text-secondary mb-0">Đồ da dụng</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mx-auto">
-                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Đăng ký ngay</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="d-flex justify-content-end pt-3">
-                                <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="text-light mb-3">Tại sao mọi người tin dùng?</h4>
-                            <p class="mb-4">Chúng tôi có các sản phẩm chất lượng, mẫu mã đa dạng, giá cả phù hợp. Với 2 năm kinh nghiệm thì chúng tôi đã được mọi người ngày càng tin tưởng!</p>
-                            <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Đọc thêm...</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="d-flex flex-column text-start footer-item">
-                            <h4 class="text-light mb-3">Thông tin cửa hàng</h4>
-                            <a class="btn-link" href="">Về chúng tôi</a>
-                            <a class="btn-link" href="">Liên hệ chúng tôi</a>
-                            <a class="btn-link" href="">Chính sách bảo mật</a>
-                            <a class="btn-link" href="">Điều khoảng và điều kiện</a>
-                            <a class="btn-link" href="">Chính sách hoàn trả</a>
-                            <a class="btn-link" href="">Trợ giúp</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="d-flex flex-column text-start footer-item">
-                            <h4 class="text-light mb-3">Tài khoản</h4>
-                            <a class="btn-link" href="">Tài khoản của tôi</a>
-                            <a class="btn-link" href="">Chi tiết cửa hàng</a>
-                            <a class="btn-link" href="">Giỏ hàng</a>
-                            <a class="btn-link" href="">Danh sach yêu thích</a>
-                            <a class="btn-link" href="">Đơn hàng đã mua</a>
-                        </div>
-                    </div>
-                    <!-- Thông tin người mua -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="text-light mb-3">Liên hệ</h4>
-                            <p>Địa chỉ: 48 Cao Thắng, Hải Châu, Đà Nẵng</p>
-                            <p>Email: duyvietnguyen0805@gmail.com</p>
-                            <p>Điện thoại: +0335 903 401</p>
-                            <p>Thanh toán thành công</p>
-                            <img src="img/payment.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright bg-dark py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Shop Real</a>, Tất cả các quyền</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright End -->
-
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
-</html>
+        <%@include file="/includes/footer.jsp" %>

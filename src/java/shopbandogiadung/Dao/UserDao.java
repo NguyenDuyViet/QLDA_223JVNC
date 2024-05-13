@@ -7,23 +7,23 @@ package shopbandogiadung.Dao;
 import java.util.ArrayList;
 import shopbandogiadung.model.User;
 import java.sql.*;
-import shopbandogiadung.model.TKUser;
 
 /**
  *
  * @author ADMIN
  */
 public class UserDao {
-    public ArrayList<User> getAllUser(){
+
+    public ArrayList<User> getAllUser() {
         ArrayList<User> users = new ArrayList<User>();
-        
+
         Connection connection = JDBCConnection.getJDBCConnection();
         String sql = "SELECT * FROM Users";
-        
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
-            
+
             while (rs.next()) {
                 User user = new User();
                 user.setHo(rs.getString("Ho"));
@@ -32,34 +32,80 @@ public class UserDao {
                 user.setEmail(rs.getString("Email"));
                 user.setDiaChi(rs.getString("DiaChi"));
                 user.setMatKhau(rs.getString("MatKhau"));
-                
+
                 users.add(user);
             }
-            
+
             // Đóng ResultSet và PreparedStatement
             rs.close();
             preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
         return users;
     }
-    
-    public void addUser(User user){
+
+    public String generateCodeUser() {
         Connection connection = JDBCConnection.getJDBCConnection();
-        
-        String sql = "INSERT INTO Users(Ho, Ten, SDT, Email, DiaChi, MatKhau) VALUES (?,?,?,?,?,?)";
-        
+
+        String sql = "SELECT TOP 1 * FROM Users ORDER BY MaKH DESC";
+
+        String maKhTmp = "";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getHo());
-            preparedStatement.setString(2, user.getTen());
-            preparedStatement.setString(3, user.getSDT());
-            preparedStatement.setString(4, user.getEmail());
-            preparedStatement.setString(5, user.getDiaChi());
-            preparedStatement.setString(6, user.getMatKhau());
-            
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                maKhTmp = rs.getString("MaKH");
+            }
+
+            // Đóng ResultSet và PreparedStatement
+            rs.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String maKhNew = "K0001";
+        if (!maKhTmp.isEmpty()) {
+            int numberKh = Integer.parseInt(maKhTmp.split("K")[1]);
+            int numberNew = numberKh + 1;
+
+            String firstKey = "K000";
+
+            if (countNumber(numberNew) == 2) {
+                firstKey = "K00";
+            }
+            if (countNumber(numberNew) == 3) {
+                firstKey = "K0";
+            }
+            if (countNumber(numberNew) == 4) {
+                firstKey = "K";
+            }
+
+            maKhNew = firstKey + numberNew;
+        }
+
+        return maKhNew;
+    }
+
+    public void addUser(User user) {
+        Connection connection = JDBCConnection.getJDBCConnection();
+
+        String maKh = generateCodeUser();
+        String sql = "INSERT INTO Users(MaKH,Ho, Ten, SDT, Email, DiaChi, MatKhau) VALUES (?,?,?,?,?,?,?)";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, maKh);
+            preparedStatement.setString(2, user.getHo());
+            preparedStatement.setString(3, user.getTen());
+            preparedStatement.setString(4, user.getSDT());
+            preparedStatement.setString(5, user.getEmail());
+            preparedStatement.setString(6, user.getDiaChi());
+            preparedStatement.setString(7, user.getMatKhau());
+
             int rs = preparedStatement.executeUpdate();
             System.out.println(rs);
         } catch (SQLException e) {
@@ -67,44 +113,47 @@ public class UserDao {
         }
     }
     
-    public ArrayList<TKUser> getAllTKUser(){
-        ArrayList<TKUser> tkUsers = new ArrayList<TKUser>();
-        
+    public static int countNumber(int number) {
+        int count = 0;
+
+        while (number > 0) {
+            number /= 10;
+            count++;    // tăng biến count lên 1
+        }
+        return count;
+    }
+
+    public boolean checkLogin(String email, String password) {
         Connection connection = JDBCConnection.getJDBCConnection();
-        String sql = "SELECT * FROM Users";
-        
+        String sql = "SELECT TOP 1 * FROM Users WHERE Email=? AND MatKhau=?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+
             ResultSet rs = preparedStatement.executeQuery();
-            
+
             while (rs.next()) {
-                TKUser tkuser = new TKUser();
-                
-                tkuser.setSdt(rs.getString("SDT"));
-                tkuser.setEmail(rs.getString("Email"));
-                tkuser.setPassword(rs.getString("MatKhau"));
-                
-                tkUsers.add(tkuser);
+                return true;
             }
-            
-            // Đóng ResultSet và PreparedStatement
             rs.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
-        
-        return tkUsers;
+
+        return false;
     }
-    public User findUser(String username, String password){
+    
+    public User getUserbyuserName(String username){
         Connection connection = JDBCConnection.getJDBCConnection();
-        String sql = "SELECT * FROM Users Where (SDT = "+username+" or Email = "+ username + ")and MatKhau="+password;
-        
-        User user = new User();
+        String sql = "SELECT TOP 1 * FROM Users WHERE Email=?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+
             ResultSet rs = preparedStatement.executeQuery();
-            
+            User user = new User();
             while (rs.next()) {
                 user.setHo(rs.getString("Ho"));
                 user.setTen(rs.getString("Ten"));
@@ -112,14 +161,34 @@ public class UserDao {
                 user.setEmail(rs.getString("Email"));
                 user.setDiaChi(rs.getString("DiaChi"));
                 user.setMatKhau(rs.getString("MatKhau"));
+                return user;
             }
-            
-            // Đóng ResultSet và PreparedStatement
             rs.close();
             preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return user;
+
+        return null;
+    }
+
+    public boolean checkSingup(String email, String sdt) {
+        Connection connection = JDBCConnection.getJDBCConnection();
+        String sql = "SELECT * FROM Users WHERE Email=? OR SDT=?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, sdt);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+            rs.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

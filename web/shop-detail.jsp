@@ -4,62 +4,8 @@
     Author     : ADMIN
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Shop Real</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
-            rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="<%= request.getContextPath() %>/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="<%= request.getContextPath() %>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet">
-
-    </head>
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Navbar start -->
-        <div class="container-fluid fixed-top">
-            <div class="container topbar bg-primary d-none d-lg-block">
-                <div class="d-flex justify-content-between">
-                    <div class="top-info ps-2">
-                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">48 Cao Thắng, Hải Châu, TP Đà Nẵng</a></small>
-                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">abc123456@gmail.com</a></small>
-                    </div>
-                    <div class="top-link pe-2">
-                        <a href="#" class="text-white"><small class="text-white mx-2">Chính sách bảo mật</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white mx-2">Điều khoảng sử dụng</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white ms-2">Bán hàng và hoàn tiền</small></a>
-                    </div>
-                </div>
-            </div>
+<%@include file="/includes/header.jsp" %>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
                     <a href="index.jsp" class="navbar-brand"><h1 class="text-primary display-6">Shop Real</h1></a>
@@ -81,22 +27,7 @@
                             </div>
                             <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
-                            <a href="login_register_form.html" class="my-auto">
-                                <i class="fas fa-plus fa-2x"></i>
-                                <i class="fas fa-user fa-2x" style="display: none"></i>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Navbar End -->
+                        <%@include file="/includes/Icon.jsp" %>
 
 
         <!-- Modal Search Start -->
@@ -140,7 +71,7 @@
                             <div class="col-lg-6">
                                 <div class="border rounded">
                                     <a href="#">
-                                        <img src="img/single-item.jpg" class="img-fluid rounded" alt="Image">
+                                        <img src="images/may-hut-bui-bosch-bhn20l.png" class="img-fluid rounded" alt="Image">
                                     </a>
                                 </div>
                             </div>
@@ -156,9 +87,9 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <p class="mb-4">Ra đời từ năm 1918, Panasonic là thương hiệu điện tử, điện lạnh và gia dụng nổi tiếng thuộc tập đoàn Matsushita Electric Industrial Co., Ltd.,
-                                     có trụ sở chính được đặt tại Kadoma, tỉnh Osaka, Nhật Bản.</p>
+                                    có trụ sở chính được đặt tại Kadoma, tỉnh Osaka, Nhật Bản.</p>
                                 <p class="mb-4">Máy hút bụi Panasonic đang được bán chính thức tại các hệ thống Shop Real trên toàn quốc,
-                                     bạn có thể mua trực tiếp tại cửa hàng hoặc đặt mua online thông qua sđt: 0335903401</p>
+                                    bạn có thể mua trực tiếp tại cửa hàng hoặc đặt mua online thông qua sđt: 0335903401</p>
                                 <div class="input-group quantity mb-5" style="width: 100px;">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
@@ -178,18 +109,18 @@
                                 <nav>
                                     <div class="nav nav-tabs mb-3">
                                         <button class="nav-link active border-white border-bottom-0" type="button" role="tab"
-                                            id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about"
-                                            aria-controls="nav-about" aria-selected="true">Mô tả</button>
+                                                id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about"
+                                                aria-controls="nav-about" aria-selected="true">Mô tả</button>
                                         <button class="nav-link border-white border-bottom-0" type="button" role="tab"
-                                            id="nav-mission-tab" data-bs-toggle="tab" data-bs-target="#nav-mission"
-                                            aria-controls="nav-mission" aria-selected="false">Đánh giá</button>
+                                                id="nav-mission-tab" data-bs-toggle="tab" data-bs-target="#nav-mission"
+                                                aria-controls="nav-mission" aria-selected="false">Đánh giá</button>
                                     </div>
                                 </nav>
                                 <div class="tab-content mb-5">
                                     <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
                                         <p>Ra đời từ năm 1918, Panasonic là thương hiệu điện tử,
-                                             điện lạnh và gia dụng nổi tiếng thuộc tập đoàn Matsushita Electric Industrial Co., Ltd.,
-                                              có trụ sở chính được đặt tại Kadoma, tỉnh Osaka, Nhật Bản. </p>
+                                            điện lạnh và gia dụng nổi tiếng thuộc tập đoàn Matsushita Electric Industrial Co., Ltd.,
+                                            có trụ sở chính được đặt tại Kadoma, tỉnh Osaka, Nhật Bản. </p>
                                         <p>Máy hút bụi Panasonic đang được bán chính thức tại các hệ thống Shop Real trên toàn quốc,
                                             bạn có thể mua trực tiếp tại cửa hàng hoặc đặt mua online thông qua sđt: 0335903401</p>
                                         <div class="px-2">
@@ -241,7 +172,7 @@
                                     </div>
                                     <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
                                         <div class="d-flex">
-                                            <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3" style="width: 100px; height: 100px;" alt="">
+                                            <img src="images/61dc949f112aafa19b217bc45fff8a30-1592062367895317441119.webp" class="img-fluid rounded-circle p-3" style="width: 100px; height: 100px;" alt="">
                                             <div class="">
                                                 <p class="mb-2" style="font-size: 14px;">08/05/2024</p>
                                                 <div class="d-flex justify-content-between">
@@ -258,10 +189,11 @@
                                             </div>
                                         </div>
                                         <div class="d-flex">
-                                            <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3" style="width: 100px; height: 100px;" alt="">
+                                            <img src="images/24046700915155293488015932154538356337617632n-16808383238891669904139.webp" class="img-fluid rounded-circle p-3" style="width: 100px; height: 100px;" alt="">
                                             <div class="">
-                                                <p class="mb-2" style="font-size: 14px;">25/08/2024</p>
+                                                <p class="mb-2" style="font-size: 14px;">08/05/2024</p>
                                                 <div class="d-flex justify-content-between">
+
                                                     <h5>Trần Đình Quý</h5>
                                                     <div class="d-flex mb-3">
                                                         <i class="fa fa-star text-secondary"></i>
@@ -284,27 +216,31 @@
                                 </div>
                             </div>
                             <form action="#">
-                                <h4 class="mb-5 fw-bold">Leave a Reply</h4>
+                                <h4 class="mb-5 fw-bold">Để lại một câu trả lời</h4>
                                 <div class="row g-4">
                                     <div class="col-lg-6">
                                         <div class="border-bottom rounded">
-                                            <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
+                                            <label>
+                                                <input type="text" class="form-control border-0 me-4" placeholder="Tên của bạn *">
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="border-bottom rounded">
-                                            <input type="email" class="form-control border-0" placeholder="Your Email *">
+                                            <label>
+                                                <input type="email" class="form-control border-0" placeholder="Email của bạn *">
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="border-bottom rounded my-4">
-                                            <textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Your Review *" spellcheck="false"></textarea>
+                                            <label for=""></label><textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Phản hồi của bạn *" spellcheck="false"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="d-flex justify-content-between py-3 mb-5">
                                             <div class="d-flex align-items-center">
-                                                <p class="mb-0 me-3">Please rate:</p>
+                                                <p class="mb-0 me-3">Đánh giá:</p>
                                                 <div class="d-flex align-items-center" style="font-size: 12px;">
                                                     <i class="fa fa-star text-muted"></i>
                                                     <i class="fa fa-star"></i>
@@ -313,50 +249,53 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                             </div>
-                                            <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3"> Post Comment</a>
+                                            <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3"> Đăng bình luận</a>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-xl-3">
                         <div class="row g-4 fruite">
                             <div class="col-lg-12">
                                 <div class="input-group w-100 mx-auto d-flex mb-4">
-                                    <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                                    <label>
+                                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                                    </label>
+                                    <span for="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                                 </div>
                                 <div class="mb-4">
-                                    <h4>Categories</h4>
+                                    <h4>Thể Loại</h4>
                                     <ul class="list-unstyled fruite-categorie">
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Bếp gas</a>
                                                 <span>(3)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Bồ nồi chảo</a>
                                                 <span>(5)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Tủ lạnh</a>
                                                 <span>(2)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Lò vi sóng</a>
                                                 <span>(8)</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="d-flex justify-content-between fruite-name">
-                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                <a href="#"><i class="fas fa-apple-alt me-2"></i>Máy hút bụi</a>
                                                 <span>(5)</span>
                                             </div>
                                         </li>
@@ -364,13 +303,13 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <h4 class="mb-4">Featured products</h4>
+                                <h4 class="mb-4">Sản phẩm đặc trưng</h4>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-1.jpg" class="img-fluid rounded" alt="Image">
+                                        <img src="images/BeptuCanzyCZ200SS.png" class="img-fluid rounded" alt="Image">
                                     </div>
                                     <div>
-                                        <h6 class="mb-2">Big Banana</h6>
+                                        <h6 class="mb-2">Bếp từ </h6>
                                         <div class="d-flex mb-2">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -379,36 +318,17 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-start">
-                                    <div class="rounded" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-2.jpg" class="img-fluid rounded" alt="">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-2">Big Banana</h6>
-                                        <div class="d-flex mb-2">
-                                            <i class="fa fa-star text-secondary"></i>
-                                            <i class="fa fa-star text-secondary"></i>
-                                            <i class="fa fa-star text-secondary"></i>
-                                            <i class="fa fa-star text-secondary"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            <h5 class="fw-bold me-2">2.500.00 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">5.000.000 đồng </h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-3.jpg" class="img-fluid rounded" alt="">
+                                        <img src="images/RobothutbuiRoborockQ_Revo-MaxV.png" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
-                                        <h6 class="mb-2">Big Banana</h6>
+                                        <h6 class="mb-2">Rô bốt hút bụi </h6>
                                         <div class="d-flex mb-2">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -417,17 +337,36 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            <h5 class="fw-bold me-2">6.650.000 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">10.500.000 đồng</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <div class="rounded" style="width: 100px; height: 100px;">
+                                        <img src="images/MaylocnuocKangaru.png" class="img-fluid rounded" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-2">Máy lọc nước</h6>
+                                        <div class="d-flex mb-2">
+                                            <i class="fa fa-star text-secondary"></i>
+                                            <i class="fa fa-star text-secondary"></i>
+                                            <i class="fa fa-star text-secondary"></i>
+                                            <i class="fa fa-star text-secondary"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="d-flex mb-2">
+                                            <h5 class="fw-bold me-2">8.300.000 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">11.000.000 đồng</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/vegetable-item-4.jpg" class="img-fluid rounded" alt="">
+                                        <img src="images/may-hut-bui-bosch-bhn20l.png" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
-                                        <h6 class="mb-2">Big Banana</h6>
+                                        <h6 class="mb-2">Máy hút bụi</h6>
                                         <div class="d-flex mb-2">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -436,17 +375,17 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            <h5 class="fw-bold me-2">3.600.000 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">7.500.000 đồng</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/vegetable-item-5.jpg" class="img-fluid rounded" alt="">
+                                        <img src="images/bepgasCanzyCZ118.png" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
-                                        <h6 class="mb-2">Big Banana</h6>
+                                        <h6 class="mb-2">Bếp gas</h6>
                                         <div class="d-flex mb-2">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -455,17 +394,17 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            <h5 class="fw-bold me-2">670.000 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">900.000 đồng</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/vegetable-item-6.jpg" class="img-fluid rounded" alt="">
+                                        <img src="images/TulanhLGInverte394l.png" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
-                                        <h6 class="mb-2">Big Banana</h6>
+                                        <h6 class="mb-2">Tủ lạnh Aqua</h6>
                                         <div class="d-flex mb-2">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -474,137 +413,121 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="d-flex mb-2">
-                                            <h5 class="fw-bold me-2">2.99 $</h5>
-                                            <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                            <h5 class="fw-bold me-2">8.880.000 đồng</h5>
+                                            <h5 class="text-danger text-decoration-line-through">12.500.000 đồng</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center my-4">
-                                    <a href="#" class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Vew More</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="position-relative">
-                                    <img src="img/banner-fruits.jpg" class="img-fluid w-100 rounded" alt="">
-                                    <div class="position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);">
-                                        <h3 class="text-secondary fw-bold">Fresh <br> Fruits <br> Banner</h3>
-                                    </div>
+                                    <a href="#" class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h1 class="fw-bold mb-0">Related products</h1>
+                <h1 class="fw-bold mb-0">Những sản phẩm tương tự</h1>
                 <div class="vesitable">
                     <div class="owl-carousel vegetable-carousel justify-content-center">
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/beptuEuro.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Thiết bị thông minh</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Parsely</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Bếp từ EUROSUN</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">2.500.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/tulanhLG.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Thết bị thông minh</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Parsely</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Tủ lạnh LG</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">20.500.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light" alt="">
+                                <img src="images/bo4noichao.png" class="img-fluid w-100 rounded-top bg-light" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Đồ gia dụng bếp</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Banana</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Bộ nồi inox </h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">670.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/lovisongTrang.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Thiết bị thông minh</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Bell Papper</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Lò vi sóng Cata</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">6.300.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/robothutbuiDen.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Thiết bị thông minh</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Potatoes</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Rô bốt hụt bụi</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">12.500.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/BeptuDen.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Thiết bị thông minh</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Parsely</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Bếp từ Faster</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">3.400.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/chaoDaymaudo.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Đồ gia dụng bếp</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Potatoes</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Chảo chống dính</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">400.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         <div class="border border-primary rounded position-relative vesitable-item">
                             <div class="vesitable-img">
-                                <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/bepgasmini.png" class="img-fluid w-100 rounded-top" alt="">
                             </div>
                             <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
                             <div class="p-4 pb-0 rounded-bottom">
-                                <h4>Parsely</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                <h4>Bếp gas mini</h4>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                    <p class="text-dark fs-5 fw-bold">280.000 đồng</p>
                                     <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                 </div>
                             </div>
@@ -616,105 +539,4 @@
         <!-- Single Product End -->
     
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
-            <div class="container py-5">
-                <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
-                    <div class="row g-4">
-                        <div class="col-lg-3">
-                            <a href="#">
-                                <h1 class="text-primary mb-0">Shop Real</h1>
-                                <p class="text-secondary mb-0">Đồ da dụng</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mx-auto">
-                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Đăng ký ngay</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="d-flex justify-content-end pt-3">
-                                <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="text-light mb-3">Tại sao mọi người tin dùng?</h4>
-                            <p class="mb-4">Chúng tôi có các sản phẩm chất lượng, mẫu mã đa dạng, giá cả phù hợp. Với 2 năm kinh nghiệm thì chúng tôi đã được mọi người ngày càng tin tưởng!</p>
-                            <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Đọc thêm...</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="d-flex flex-column text-start footer-item">
-                            <h4 class="text-light mb-3">Thông tin cửa hàng</h4>
-                            <a class="btn-link" href="">Về chúng tôi</a>
-                            <a class="btn-link" href="">Liên hệ chúng tôi</a>
-                            <a class="btn-link" href="">Chính sách bảo mật</a>
-                            <a class="btn-link" href="">Điều khoảng và điều kiện</a>
-                            <a class="btn-link" href="">Chính sách hoàn trả</a>
-                            <a class="btn-link" href="">Trợ giúp</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="d-flex flex-column text-start footer-item">
-                            <h4 class="text-light mb-3">Tài khoản</h4>
-                            <a class="btn-link" href="">Tài khoản của tôi</a>
-                            <a class="btn-link" href="">Chi tiết cửa hàng</a>
-                            <a class="btn-link" href="">Giỏ hàng</a>
-                            <a class="btn-link" href="">Danh sach yêu thích</a>
-                            <a class="btn-link" href="">Đơn hàng đã mua</a>
-                        </div>
-                    </div>
-                    <!-- Thông tin người mua -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="text-light mb-3">Liên hệ</h4>
-                            <p>Địa chỉ: 48 Cao Thắng, Hải Châu, Đà Nẵng</p>
-                            <p>Email: duyvietnguyen0805@gmail.com</p>
-                            <p>Điện thoại: +0335 903 401</p>
-                            <p>Thanh toán thành công</p>
-                            <img src="img/payment.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright bg-dark py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Shop Real</a>, Tất cả các quyền</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright End -->
-
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
-</html>
+        <%@include file="/includes/footer.jsp" %>

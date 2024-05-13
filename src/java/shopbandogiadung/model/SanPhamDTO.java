@@ -8,13 +8,31 @@ package shopbandogiadung.model;
  *
  * @author ADMIN
  */
-public class SanPham {
+public class SanPhamDTO {
     private String MaSanPham;
     private String TenSanPham;
     private Double GiaBan;
     private int SoLuong;
     private String MaLoai;
     private String ImageProduct;
+    private int SoLuongCart;
+    private Double tongTienCart;
+
+    public Double getTongTienCart() {
+        return tongTienCart;
+    }
+
+    public void setTongTienCart(Double tongTienCart) {
+        this.tongTienCart = tongTienCart;
+    }
+    
+    public int getSoLuongCart() {
+        return SoLuongCart;
+    }
+
+    public void setSoLuongCart(int SoLuongCart) {
+        this.SoLuongCart = SoLuongCart;
+    }
 
     public String getImageProduct() {
         return ImageProduct;

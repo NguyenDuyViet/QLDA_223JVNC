@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import shopbandogiadung.Service.UserService;
 import shopbandogiadung.model.User;
@@ -38,10 +39,14 @@ public class SingupServlet extends HttpServlet{
         user.setEmail(email);
         user.setDiaChi(diachi);
         user.setMatKhau(matkhau);
+        if(!userService.checkSingup(email, SDT)){
+            userService.addUser(user);
         
-        userService.addUser(user);
-        
-        resp.sendRedirect("index.jsp");
+            resp.sendRedirect("login_register_form.html?signupSuccess=true");
+        }else{
+            HttpSession session = req.getSession();
+            session.setAttribute("exist", "false");
+        }
     }
     
 }

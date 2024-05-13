@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             window.location.href = 'testimonial.jsp'; //Đang ở trang testimonial.html
                           }
               else {
-                  window.location.href = 'index.html'; // Mặc định sẽ điều hướng về index.html nếu không xác định được trang hiện tại
+                  window.location.href = 'index.jsp'; // Mặc định sẽ điều hướng về index.html nếu không xác định được trang hiện tại
               }
             }
           }

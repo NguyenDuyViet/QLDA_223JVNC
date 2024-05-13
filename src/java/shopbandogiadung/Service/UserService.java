@@ -6,7 +6,6 @@ package shopbandogiadung.Service;
 
 import java.util.ArrayList;
 import shopbandogiadung.Dao.UserDao;
-import shopbandogiadung.model.TKUser;
 import shopbandogiadung.model.User;
 
 /**
@@ -24,14 +23,23 @@ public class UserService {
         return userDao.getAllUser();
     }
     
+    public boolean checkLogin(String email, String password){
+        return userDao.checkLogin(email,password);
+    }
+    
     public void addUser(User user){
         userDao.addUser(user);
     }
     
-    public ArrayList<TKUser> getAllTKUser(){
-        return userDao.getAllTKUser();
+    public User getUserbyuserName(String username){
+        return userDao.getUserbyuserName(username);
     }
-    public User findUser(String username, String password){
-        return userDao.findUser(username, password);
+    
+    public boolean checkSingup(String email, String sdt){
+        if(!userDao.checkSingup(email, sdt)){
+            return false;
+        }else{
+            return true;
+        }
     }
 }
