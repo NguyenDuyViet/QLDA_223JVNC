@@ -14,8 +14,8 @@ import javax.swing.table.AbstractTableModel;
 public class B_SanPham_ModelData extends AbstractTableModel {
 
     Vector<ENTITY.E_SanPham> data = new Vector<>();
-    String colNames[] = {"Mã sản phẩm", "Tên sản phẩm", "Giá bán", "Số lượng", "Mã loại"};
-    Class<?> colClasses[] = {String.class, String.class, String.class, int.class, String.class};
+    String colNames[] = {"Mã sản phẩm", "Tên sản phẩm", "Giá bán", "Số lượng", "Mã loại", "Link ảnh"};
+    Class<?> colClasses[] = {String.class, String.class, String.class, int.class, String.class, String.class};
 
     B_SanPham_ModelData(Vector<ENTITY.E_SanPham> list) {
         data = list;
@@ -47,6 +47,9 @@ public class B_SanPham_ModelData extends AbstractTableModel {
         }
         if (columnIndex == 4) {
             return data.get(rowIndex).getMaLoai();
+        }
+        if (columnIndex == 5) {
+            return data.get(rowIndex).getLinkAnh();
         }
         return null;
     }

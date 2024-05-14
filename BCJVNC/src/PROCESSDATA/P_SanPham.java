@@ -22,10 +22,10 @@ public class P_SanPham {
     
     
     
-    public int ThemSP(String MaSP, String tenSP,String giasp, int SL, String maLoai)
+    public int ThemSP(String MaSP, String tenSP,String giasp, int SL, String maLoai,String LinkAnh)
     {
-     sqlInsertSP="insert into SanPham (MaSanPham,TenSanPham,GiaBan,SoLuong,MaLoai)" 
-                +"values ('"+MaSP+"',N'"+tenSP+"','"+giasp+"',"+SL+",'"+maLoai+"')";
+     sqlInsertSP="insert into SanPham (MaSanPham,TenSanPham,GiaBan,SoLuong,MaLoai,LinkAnh)" 
+                +"values ('"+MaSP+"',N'"+tenSP+"','"+giasp+"',"+SL+",'"+maLoai+"','"+LinkAnh+"')";
        int k= con.ExecuteUpdateSQL( sqlInsertSP);
        return  k;
     }
@@ -35,9 +35,9 @@ public class P_SanPham {
         int k = con.ExecuteUpdateSQL(sqlDeleteSP);
         return k;
     }
-    public int SuaSP(String MaSP, String tenSP,String giasp, int SL, String maLoai )
+    public int SuaSP(String MaSP, String tenSP,String giasp, int SL, String maLoai,String LinkAnh )
     {
-        sqlUpdateSP = "update SanPham set TenSanPham=N'"+tenSP+"', GiaBan='"+giasp+"', SoLuong="+SL+",MaLoai='"+maLoai+"'where MaSanPham= '"+MaSP+"'";
+        sqlUpdateSP = "update SanPham set TenSanPham=N'"+tenSP+"', GiaBan='"+giasp+"', SoLuong="+SL+",MaLoai='"+maLoai+"',LinkAnh='"+LinkAnh+"' where MaSanPham= '"+MaSP+"'";
         int k = con.ExecuteUpdateSQL(sqlUpdateSP);
         return k;
     }
@@ -76,6 +76,7 @@ public class P_SanPham {
                 sp.setGiaBan(rs.getString("GiaBan"));
                 sp.setSoLuong(rs.getInt("SoLuong"));
                 sp.setMaLoai(rs.getString("MaLoai"));
+                sp.setLinkAnh(rs.getString("LinkAnh"));
                 vt.addElement(sp);
             }          
      }catch(SQLException ex) {

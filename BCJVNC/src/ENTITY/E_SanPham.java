@@ -14,6 +14,8 @@ public class E_SanPham {
     private String  GiaBan;
     private int     SoLuong;
     private String  MaLoai;
+    private String  LinkAnh;
+
 
     public E_SanPham() {
     }
@@ -64,6 +66,14 @@ public class E_SanPham {
 
     public void setMaLoai(String MaLoai) {
         this.MaLoai = MaLoai;
+    }
+
+    public String getLinkAnh() {
+        return LinkAnh;
+    }
+
+    public void setLinkAnh(String LinkAnh) {
+        this.LinkAnh = LinkAnh;
     }
 	
     

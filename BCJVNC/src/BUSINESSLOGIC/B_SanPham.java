@@ -34,7 +34,7 @@ public class B_SanPham {
     }
 
     public int InsertSP() {
-        int k = this.ProQLCH.ThemSP(GuiQLCH.jTextField1.getText(),GuiQLCH.jTextField2.getText(),GuiQLCH.jTextField3.getText(),Integer.parseInt(GuiQLCH.jTextField4.getText()),((ENTITY.E_KhoHang)GuiQLCH.jComboBox16.getSelectedItem()).getMaLoai());
+        int k = this.ProQLCH.ThemSP(GuiQLCH.jTextField1.getText(),GuiQLCH.jTextField2.getText(),GuiQLCH.jTextField3.getText(),Integer.parseInt(GuiQLCH.jTextField4.getText()),((ENTITY.E_KhoHang)GuiQLCH.jComboBox16.getSelectedItem()).getMaLoai(),GuiQLCH.jTextField32.getText());
         return k;
     }
 
@@ -44,7 +44,7 @@ public class B_SanPham {
     }
 
     public int UpdateSP() {
-        int k = this.ProQLCH.SuaSP(GuiQLCH.jTextField1.getText(),GuiQLCH.jTextField2.getText(),GuiQLCH.jTextField3.getText(),Integer.parseInt(GuiQLCH.jTextField4.getText()),((ENTITY.E_KhoHang)GuiQLCH.jComboBox16.getSelectedItem()).getMaLoai());
+        int k = this.ProQLCH.SuaSP(GuiQLCH.jTextField1.getText(),GuiQLCH.jTextField2.getText(),GuiQLCH.jTextField3.getText(),Integer.parseInt(GuiQLCH.jTextField4.getText()),((ENTITY.E_KhoHang)GuiQLCH.jComboBox16.getSelectedItem()).getMaLoai(),GuiQLCH.jTextField32.getText());
         return k;
     }
 

@@ -16,20 +16,20 @@ public class E_HoaDonDatHang {
     private Date  NgayDatHang;
     private Date     NgayGiaoHang;
     private int SoLuongDat ;
-    private String  GiaBan;
+    private String  GiaMua;
     private int     MaKH;
     private String  MaSanPham ;
 
     public E_HoaDonDatHang() {
     }
 
-    public E_HoaDonDatHang(int MaHoaDon, String TrangThaiGiaoHang, Date NgayDatHang, Date NgayGiaoHang, int SoLuongDat, String GiaBan, int MaKH, String MaSanPham) {
+    public E_HoaDonDatHang(int MaHoaDon, String TrangThaiGiaoHang, Date NgayDatHang, Date NgayGiaoHang, int SoLuongDat, String GiaMua, int MaKH, String MaSanPham) {
         this.MaHoaDon = MaHoaDon;
         this.TrangThaiGiaoHang = TrangThaiGiaoHang;
         this.NgayDatHang = NgayDatHang;
         this.NgayGiaoHang = NgayGiaoHang;
         this.SoLuongDat = SoLuongDat;
-        this.GiaBan = GiaBan;
+        this.GiaMua = GiaMua;
         this.MaKH = MaKH;
         this.MaSanPham = MaSanPham;
     }
@@ -74,12 +74,12 @@ public class E_HoaDonDatHang {
         this.SoLuongDat = SoLuongDat;
     }
 
-    public String getGiaBan() {
-        return GiaBan;
+    public String getGiaMua() {
+        return GiaMua;
     }
 
-    public void setGiaBan(String GiaBan) {
-        this.GiaBan = GiaBan;
+    public void setGiaMua(String GiaMua) {
+        this.GiaMua = GiaMua;
     }
 
     public int getMaKH() {
