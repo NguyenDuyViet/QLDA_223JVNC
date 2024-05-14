@@ -35,11 +35,7 @@ public class UserService {
         return userDao.getUserbyuserName(username);
     }
     
-    public boolean checkSingup(String email, String sdt){
-        if(!userDao.checkSingup(email, sdt)){
-            return false;
-        }else{
-            return true;
-        }
+    public boolean checkSignup(String email, String sdt){
+        return userDao.checkSignup(email, sdt);
     }
 }

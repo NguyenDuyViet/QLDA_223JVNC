@@ -35,6 +35,8 @@ public class LoginServlet extends HttpServlet {
             SanPhamService sanPhamService = new SanPhamService();
             List<SanPham> sanphams = sanPhamService.getAllProduce();
             
+            User user = userService.getUserbyuserName(username);
+            req.getSession().setAttribute("User", user);
             req.getSession().setAttribute("userLoggedIn", username);
             req.getSession().setAttribute("products", sanphams);
             resp.sendRedirect("index.jsp");

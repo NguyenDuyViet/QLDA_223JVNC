@@ -3,7 +3,7 @@
     Created on : May 11, 2024, 9:15:27 PM
     Author     : ADMIN
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/includes/header.jsp" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
             <div class="container px-0">
@@ -130,39 +130,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <c:forEach items="${sessionScope.Carts}" var="cart">
                                         <tr>
                                             <th scope="row">
                                                 <div class="d-flex align-items-center mt-2">
-                                                    <img src="images/maygiatLG14kgden.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                    <img src="<c:out value="${cart.getImageProduct()}"/>" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                                 </div>
                                             </th>
-                                            <td class="py-5">Máy giặt LG</td>
-                                            <td class="py-5">10.500.000 đồng</td>
-                                            <td class="py-5">1</td>
-                                            <td class="py-5">10.500.000 đồng</td>
+                                            <td class="py-5"><c:out value="${cart.getTenSanPham()}"/></td>
+                                            <td class="py-5"><c:out value="${cart.getGiaBan()}"/>đ</td>
+                                            <td class="py-5"><c:out value="${cart.getSoLuongCart()}"/></td>
+                                            <td class="py-5"><c:out value="${cart.getTongTienCart()}"/></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="d-flex align-items-center mt-2">
-                                                    <img src="images/bepgasDanang.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
-                                                </div>
-                                            </th>
-                                            <td class="py-5">Bếp gas</td>
-                                            <td class="py-5">700.000 đồng</td>
-                                            <td class="py-5">2</td>
-                                            <td class="py-5">1.400.000 đồng</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="d-flex align-items-center mt-2">
-                                                    <img src="images/noi-com-dien-tu-long-nieu-nagakawa-nag0135-1-8l-900w-1.webp" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
-                                                </div>
-                                            </th>
-                                            <td class="py-5">Nồi cơm điện</td>
-                                            <td class="py-5">550.000 đồng</td>
-                                            <td class="py-5">1</td>
-                                            <td class="py-5">550.000 đồng</td>
-                                        </tr>
+                                        </c:forEach> 
                                         <tr>
                                             <th scope="row">
                                             </th>
@@ -173,7 +153,8 @@
                                             </td>
                                             <td class="py-5">
                                                 <div class="py-3 border-bottom border-top">
-                                                    <p class="mb-0 text-dark">50.000 đồng</p>
+                                                    <c:set var="phivc" value="100000" scope="page"/>
+                                                    <p class="mb-0 text-dark"><c:out value="${phivc}"/>đ</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -190,11 +171,16 @@
                                                 </div>
                                                 <div class="form-check text-start">
                                                     <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-2" name="Shipping-1" value="Shipping">
-                                                    <label class="form-check-label" for="Shipping-2"> Giá cố định: 20.000</label>
+                                                    <c:set var="tongTien" value="0" scope="page"/>
+                                                    <c:forEach items="${sessionScope.Carts}" var="cart">
+                                                        <c:set var="tongTien" value="${tongTien + cart.tongTienCart}" scope="page"/>
+                                                    </c:forEach>
+                                                    <label class="form-check-label" for="Shipping-2"> Giá cố định: <c:out value="${tongTien}"/>đ</label>
                                                 </div>
                                                 <div class="form-check text-start">
                                                     <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-3" name="Shipping-1" value="Shipping">
-                                                    <label class="form-check-label" for="Shipping-3">Giá địa phương: 10.000</label>
+                                                    <c:set var="phivc2" value="50000" scope="page"/>
+                                                    <label class="form-check-label" for="Shipping-3">Phí vận chuyển: <c:out value="${phivc2}"/>đ</label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -202,13 +188,14 @@
                                             <th scope="row">
                                             </th>
                                             <td class="py-5">
-                                                <p class="mb-0 text-dark text-uppercase py-3">Toàn thể </p>
+                                                <p class="mb-0 text-dark text-uppercase py-3">Tổng cộng</p>
                                             </td>
                                             <td class="py-5"></td>
                                             <td class="py-5"></td>
                                             <td class="py-5">
                                                 <div class="py-3 border-bottom border-top">
-                                                    <p class="mb-0 text-dark">2.454.000 đồng</p>
+                                                    <c:set var="tongCong" value="${phivc + tongTien + phivc2}" scope="page"/>
+                                                    <p class="mb-0 text-dark"><c:out value="${tongCong}"/>đ</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -249,7 +236,7 @@
                                 </div>
                             </div>
                             <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                                <button type="button" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Đặt hàng</button>
+                                <a href="/SHOPBANDOGIADUNG/OderServlet" type="button" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Đặt hàng</a>
                             </div>
                         </div>
                     </div>

@@ -39,13 +39,14 @@ public class SingupServlet extends HttpServlet{
         user.setEmail(email);
         user.setDiaChi(diachi);
         user.setMatKhau(matkhau);
-        if(!userService.checkSingup(email, SDT)){
+        if(!userService.checkSignup(email, SDT)){
             userService.addUser(user);
         
             resp.sendRedirect("login_register_form.html?signupSuccess=true");
         }else{
             HttpSession session = req.getSession();
             session.setAttribute("exist", "false");
+            resp.sendRedirect("login_register_form.html?signupSuccess=false");
         }
     }
     

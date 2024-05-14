@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
-    <html lang="vi">
+<%-- 
+    Document   : Login-Signup
+    Created on : May 14, 2024, 2:12:38 PM
+    Author     : ADMIN
+--%>
+
+<%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html lang="vi">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login-Singup</title>
+        <title>Login-Signup</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/login_register.css">
-                
+
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-                        
+
     </head>
     <body>
         <section class="container forms">
@@ -121,14 +127,14 @@
                 <div class="media-options">
                     <a href="#" class="field facebook">
                         <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>Đăng nhập với Facebook</span>
+                        <span>Đăng ký bằng Facebook</span>
                     </a>
                 </div>
 
                 <div class="media-options">
                     <a href="#" class="field google">
                         <img src="images/gg.png" alt="" class="google-img">
-                        <span>Đăng nhập với Google</span>
+                        <span>Đăng ký bằng Google</span>
                     </a>
                 </div>
 

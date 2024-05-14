@@ -107,7 +107,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4"><c:out value="${cart.getTongTienCart()}"/></p>
+                                    <p class="mb-0 mt-4"><c:out value="${cart.tongTienCart}"/></p>
                                 </td>
                                 <td>
                                     <a href="/SHOPBANDOGIADUNG/deleteProduce?maSP=<c:out value="${cart.getMaSanPham()}"/>" class="btn btn-md rounded-circle bg-light border mt-4" >
@@ -133,21 +133,27 @@
                                     <h1 class="display-6 mb-4">Giỏ hàng <span class="fw-normal">Tổng tiền</span></h1>
                                     <div class="d-flex justify-content-between mb-4">
                                         <h5 class="mb-0 me-4">Tổng phụ:</h5>
-                                        <p class="mb-0">90.000đ</p>
+                                        <c:set var="phivc" value="900000" scope="page"/>
+                                        <p class="mb-0"><c:out value="${phivc}"/>đ</p>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <h5 class="mb-0 me-4">Đang vận chuyển</h5>
                                         <div class="">
-                                            <p class="mb-0">Giá cố định: 28.331.000đ</p>
+                                            <c:set var="tongTien" value="0" scope="page"/>
+                                            <c:forEach items="${sessionScope.carts}" var="cart">
+                                                <c:set var="tongTien" value="${tongTien + cart.tongTienCart}" scope="page"/>
+                                            </c:forEach>
+                                            <p class="mb-0">Giá cố định: <c:out value="${tongTien}"/>đ</p>
                                         </div>
                                     </div>
-                                    <p class="mb-0 text-end">Vận chuyển đến Đà Nẵng</p>
+                                    <p class="mb-0 text-end">Vận chuyển đến <c:out value="${sessionScope.User.getDiaChi()}"/></p>
                                 </div>
                                 <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                                     <h5 class="mb-0 ps-4 me-4">Tổng tiền</h5>
-                                    <p class="mb-0 pe-4">28.421.000đ</p>
+                                    <c:set var="tongCong" value="${phivc + tongTien}" scope="page"/>
+                                    <p class="mb-0 pe-4"><c:out value="${tongCong}"/>đ</p>
                                 </div>
-                                <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Thanh toán</button>
+                                <a href="/SHOPBANDOGIADUNG/PayServlet" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4">Thanh toán</a>
                             </div>
                         </div>
                     </div>

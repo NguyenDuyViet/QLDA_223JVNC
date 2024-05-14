@@ -241,147 +241,24 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="row g-4 justify-content-center">
+                                    <c:forEach items="${sessionScope.products}" var="product">
                                     <div class="col-md-6 col-lg-6 col-xl-4">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
-                                                <img src="images/bepgasShop.png" class="img-fluid w-100 rounded-top" alt="">
+                                                <img src="<c:out value="${product.getImageProduct()}"/>" class="img-fluid w-100 rounded-top" alt="">
                                             </div>
                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Đồ gia dụng bếp</div>
                                             <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Bếp gas</h4>
+                                                <h4><c:out value="${product.getTenSanPham()}"/></h4>
 
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">700.000 đồng</p>
+                                                    <p class="text-dark fs-5 fw-bold mb-0"><c:out value="${product.getGiaBan()}"/>đồng</p>
                                                     <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/may-hut-bui-bosch-bhn20l.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Thiết bị thông minh </div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Máy hút bụi</h4>
-
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">7.500.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/bo4noichao.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Đồ gia dụng bếp</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Bộ nồi chảo</h4>
-
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">500.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/tulanhIndex.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Thết bị thông minh</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Tủ lạnh</h4>
-
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">25.000.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/chaoDaymaudo.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Đồ gia dụng bếp</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Chảo chống dính</h4>
-
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">500.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/robothutbuiBac.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Thiết bị thông minh</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Rô bốt hút bụi</h4>
-
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">30.000.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/noicomShop.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Đồ gia dụng bếp</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Nồi cơm điện</h4>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">700.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/maylocnuocShop.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Thiết bị thông minh</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Máy lọc nước</h4>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">6.900.00 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-xl-4">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="images/beptuEuro.png" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Thiết bị thông minh</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Bếp từ</h4>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">5.000.000 đồng</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
                                     <div class="col-12">
                                         <div class="pagination d-flex justify-content-center mt-5">
                                             <a href="#" class="rounded">&laquo;</a>

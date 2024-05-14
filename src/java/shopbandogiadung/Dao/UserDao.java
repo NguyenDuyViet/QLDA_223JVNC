@@ -172,20 +172,17 @@ public class UserDao {
         return null;
     }
 
-    public boolean checkSingup(String email, String sdt) {
+    public boolean checkSignup(String email, String sdt) {
         Connection connection = JDBCConnection.getJDBCConnection();
         String sql = "SELECT * FROM Users WHERE Email=? OR SDT=?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, sdt);
-
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                return true;
+            
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                return rs.next();
             }
-            rs.close();
-            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
