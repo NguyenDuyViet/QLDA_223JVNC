@@ -10,8 +10,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+import shopbandogiadung.Service.SanPhamService;
 import static shopbandogiadung.Service.SanPhamService.carts;
 import shopbandogiadung.Service.UserService;
+import shopbandogiadung.model.SanPham;
 import shopbandogiadung.model.User;
 
 /**
@@ -31,6 +34,10 @@ public class LogoutServlet extends HttpServlet {
         req.getSession().setAttribute("result", "no");
         req.getSession().setAttribute("User", null);
         carts.clear();
+        SanPhamService sanPhamService = new SanPhamService();
+        List<SanPham> sanphams = sanPhamService.getAllProduce();
+        sanphams.clear();
+        req.getSession().setAttribute("products", sanphams);
         req.getSession().setAttribute("carts", carts);
         req.getSession().setAttribute("userLoggedIn", null);
         

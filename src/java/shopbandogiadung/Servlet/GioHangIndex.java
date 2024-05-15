@@ -11,9 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 import static shopbandogiadung.Service.SanPhamService.carts;
-import shopbandogiadung.model.SanPhamDTO;
 
 /**
  *
