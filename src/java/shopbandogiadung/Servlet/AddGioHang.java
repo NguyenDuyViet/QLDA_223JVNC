@@ -31,7 +31,10 @@ public class AddGioHang extends HttpServlet {
         String maSanPham = request.getParameter("maSanPham");
         
         if(carts.size() == 0) {
-            carts.add(sanPhamService.getSanPhambyMaSP(maSanPham));
+            SanPhamDTO sanPhamDTO = sanPhamService.getSanPhambyMaSP(maSanPham);
+            sanPhamDTO.setTongTienCart(sanPhamDTO.getGiaBan());
+            carts.add(sanPhamDTO);
+            
         }  else {
             boolean flag = false;
             for (SanPhamDTO object : carts) {

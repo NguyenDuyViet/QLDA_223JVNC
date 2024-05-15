@@ -42,11 +42,11 @@ public class SingupServlet extends HttpServlet{
         if(!userService.checkSignup(email, SDT)){
             userService.addUser(user);
         
-            resp.sendRedirect("login_register_form.html?signupSuccess=true");
+            resp.sendRedirect("Login-Signup.jsp?signupSuccess=true");
         }else{
             HttpSession session = req.getSession();
             session.setAttribute("exist", "false");
-            resp.sendRedirect("login_register_form.html?signupSuccess=false");
+            resp.sendRedirect("Login-Signup.jsp?signupSuccess=false");
         }
     }
     
