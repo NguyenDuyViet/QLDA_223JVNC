@@ -13,7 +13,7 @@ public class JDBCConnection {
     public static Connection getJDBCConnection(){
         Connection conn = null;
         try {
-            String url = "jdbc:sqlserver://DESKTOP-R4TO9PD\\ADMIN:1433;"
+            String url = "jdbc:sqlserver://DESKTOP-R4TO9PD:1433;"
                     + "user="+user+";password="+passWord+";databaseName="+dataBaseName+";"
                     + "encrypt=true;trustServerCertificate=true";
 
